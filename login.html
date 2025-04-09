@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login - MediCare Hospital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .login-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 370px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo img {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .hospital-name {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+            font-weight: bold;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        
+        .show-password {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .show-password input {
+            margin-right: 8px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .link {
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .link a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .link a:hover {
+            text-decoration: underline;
+        }
+        
+        .skip-btn {
+            margin-top: 10px;
+            background-color: #6c757d;
+        }
+        
+        .skip-btn:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+        <div class="logo">
+            <img src="#" alt="Hospital Logo">
+        </div>
+        <h2>Login</h2>
+        <p class="hospital-name">MediCare Hospital</p>
+
+        <form onsubmit="event.preventDefault(); alert('Logging in...');">
+            <input type="text" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+
+            <div class="show-password">
+                <input type="checkbox" onclick="togglePassword()"> Show Password
+            </div>
+
+            <button type="submit">Login</button>
+
+            <button class="skip-btn" onclick="skipLogin()">Skip for now</button>
+
+            <div class="link">
+                <a href="#">Forgot Password?</a> <br>
+                <p>Don't have an account? <a href="#">Sign Up</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const password = document.getElementById("password");
+            password.type = password.type === "password" ? "text" : "password";
+        }
+
+        function skipLogin() {
+            alert("Guest access enabled! Redirecting to homepage...");
+            // yahan redirect logic daalna ho to:
+            // window.location.href = "home.html";
+        }
+    </script>
+
+</body>
+
+</html>
