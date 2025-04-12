@@ -1,10 +1,10 @@
-# 🏋️‍♂️ X Fitness - Gym Website
+🏋️‍♂️ X Fitness - Gym Website
 
 Welcome to **X Fitness**, a sleek and responsive gym website developed as part of our **System Code Management (SCM)** academic project. This platform represents the digital face of a modern fitness center.
 
 ---
 
-## 📌 Project Overview
+📌 Project Overview
 
 The **X Fitness** website allows users to:
 
@@ -14,9 +14,7 @@ The **X Fitness** website allows users to:
 
 We created this project with the goal of learning real-world **collaborative development**, **Git version control**, and **project documentation**.
 
----
-
-## 👥 Team Members
+👥 Team Members
 
 - Rudra
 - Namit
@@ -24,9 +22,7 @@ We created this project with the goal of learning real-world **collaborative dev
 - Soham
 - Shivansh 
 
----
-
-## ✨ Features
+✨ Features
 
 - Responsive and user-friendly layout  
 - Clean navigation bar with multi-page structure  
@@ -34,3 +30,16 @@ We created this project with the goal of learning real-world **collaborative dev
 - Gallery of workout spaces and sessions  
 - Functional contact form  
 - Organized file
+
+## 🖼 Website Preview
+
+Here’s a quick look at the homepage of X Fitness:
+
+
+> *Stay tuned for a live demo or video walkthrough soon!*
+
+📝 License
+
+This project is licensed under the **MIT License** – feel free to use, modify, and distribute.
+
+
