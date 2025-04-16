@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gym Fitness</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+
+<header style="background-color: #333; color: white; padding: 10px 20px;">
+    <h1 style="margin: 0;">Gym Fitness</h1>
+    <nav>
+        <a href="#home" style="color: white; margin-right: 15px; text-decoration: none;">Home</a>
+        <a href="#services" style="color: white; margin-right: 15px; text-decoration: none;">Services</a>
+        <a href="#classes" style="color: white; margin-right: 15px; text-decoration: none;">Classes</a>
+        <a href="#contact" style="color: white; text-decoration: none;">Contact</a>
+    </nav>
+</header>
+
+<section id="home" style="padding: 40px 20px; text-align: center; background-color: #f4f4f4;">
+    <h2>Transform Your Body</h2>
+    <p>Start your fitness journey today</p>
+    <a href="#join" style="display: inline-block; padding: 10px 20px; background-color: #333; color: white; text-decoration: none; border-radius: 4px;">Get Started</a>
+</section>
+
+<section id="services" style="padding: 20px;">
+    <h2>Our Services</h2>
+    <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><strong>Personal Training:</strong> Customized workout plans with expert trainers</li>
+        <li style="margin-bottom: 10px;"><strong>Cardio Zone:</strong> State-of-the-art cardio equipment</li>
+        <li><strong>Group Classes:</strong> Energetic group workout sessions</li>
+    </ul>
+</section>
+
+<section id="classes" style="padding: 20px; background-color: #f4f4f4;">
+    <h2>Our Classes</h2>
+    <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><strong>Yoga:</strong> Mon, Wed, Fri - 9:00 AM</li>
+        <li style="margin-bottom: 10px;"><strong>CrossFit:</strong> Tue, Thu - 6:00 PM</li>
+        <li><strong>Spinning:</strong> Daily - 7:00 AM</li>
+    </ul>
+</section>
+
+<section id="contact" style="padding: 20px;">
+    <h2>Contact Us</h2>
+    <form id="contact-form" style="max-width: 400px;">
+        <p>
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
+        </p>
+        <p>
+            <label for="email">Email:</label><br />
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
+        </p>
+        <p>
+            <label for="message">Message:</label><br />
+            <textarea id="message" name="message" required style="width: 100%; padding: 8px; box-sizing: border-box;" rows="4"></textarea>
+        </p>
+        <p>
+            <button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 4px;">Send Message</button>
+        </p>
+    </form>
+</section>
+
+<section id="join" style="padding: 20px; background-color: #f4f4f4;">
+    <h2>Join Gym Fitness</h2>
+    <form id="join-form" style="max-width: 400px;">
+        <p>
+            <label for="fullname">Full Name:</label><br />
+            <input type="text" id="fullname" name="fullname" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
+        </p>
+        <p>
+            <label for="join-email">Email:</label><br />
+            <input type="email" id="join-email" name="email" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
+        </p>
+        <p>
+            <label for="phone">Phone:</label><br />
+            <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
+        </p>
+        <p>
+            <label for="membership">Membership Plan:</label><br />
+            <select id="membership" name="membership" required style="width: 100%; padding: 8px; box-sizing: border-box;">
+                <option value="">Select Membership Plan</option>
+                <option value="basic">Basic - 1500/month</option>
+                <option value="premium">Premium - 2500/month</option>
+                <option value="elite">Elite - 4000/month</option>
+            </select>
+        </p>
+        <p>
+            <button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 4px;">Submit</button>
+        </p>
+    </form>
+</section>
+
+<footer style="background-color: #333; color: white; text-align: center; padding: 10px 20px;">
+    <p>&copy; 2024 Gym Fitness.</p>
+</footer>
+
+</body>
+</html>
