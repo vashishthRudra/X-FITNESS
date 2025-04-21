@@ -1,124 +1,847 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X-FITNESS Login</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .login-container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 350px;
-            text-align: center;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .input-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-        hr {
-            margin: 20px 0;
-            border: 0.5px solid #eee;
-        }
-        .login-button {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-bottom: 15px;
-        }
-        .login-button:hover {
-            background-color: #0056b3;
-        }
-        h3 {
-            text-align: center;
-            color: #666;
-            margin: 10px 0;
-            cursor: pointer;
-        }
-        .links {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .links a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        @media (max-width: 480px) {
-            .login-container {
-                width: 90%;
-            }
-        }
-    </style>
+  <!-- Comprehensive meta tags for SEO and mobile optimization -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login for X-FITNESS - Your fitness companion">
+  <meta name="keywords" content="gym, fitness, login, workout, X-FITNESS">
+  <meta name="author" content="X-FITNESS Team">
+  <meta property="og:title" content="Login | X-FITNESS">
+  <meta property="og:description" content="Access your fitness dashboard">
+  <meta property="og:type" content="website">
+  
+  <!-- Page title with brand name -->
+  <title>Login | X-FITNESS</title>
+  
+  <!-- Preloaded fonts for better performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome with integrity check -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Favicon for multiple platforms -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <style>
+    /* CSS Variables for easy theming */
+    :root {
+      --primary-color: #d32f2f;
+      --primary-dark: #b71c1c;
+      --primary-darker: #8e0e0e;
+      --primary-light: rgba(211, 47, 47, 0.1);
+      --secondary-color: #388e3c;
+      --text-dark: #333;
+      --text-medium: #555;
+      --text-light: #777;
+      --bg-light: rgba(255, 255, 255, 0.95);
+      --border-radius: 16px;
+      --box-shadow: 0 25px 45px rgba(255, 0, 0, 0.15);
+      --box-shadow-hover: 0 30px 50px rgba(211, 47, 47, 0.3);
+      --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Base reset and typography */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1581009137042-c552e485697a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
+      perspective: 1000px;
+    }
+
+    /* Jelly Wobble Animation */
+    @keyframes jellyWobble {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(0.95) rotate(-2deg); }
+      50% { transform: scale(1.05) rotate(2deg); }
+      75% { transform: scale(0.98) rotate(-1deg); }
+    }
+
+    /* Floating Animation */
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+      50% { transform: translateY(-15px) rotateX(3deg) rotateY(2deg); }
+    }
+
+    /* Background animation elements */
+    .bg-particle {
+      position: absolute;
+      background: var(--primary-light);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+      animation: float 15s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    /* Main card container with advanced 3D effects */
+    .auth-container {
+      position: relative;
+      width: 440px;
+      min-height: 600px;
+      perspective: 2000px;
+      transform-style: preserve-3d;
+      margin: 2rem;
+      cursor: pointer;
+    }
+
+    /* Card styling with glass morphism */
+    .auth-card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-light);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: var(--border-radius);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 
+        var(--box-shadow),
+        0 10px 30px rgba(0, 0, 0, 0.2);
+      transform-style: preserve-3d;
+      transition: var(--transition);
+      overflow: hidden;
+      padding: 2.5rem;
+      animation: gentleFloat 6s ease-in-out infinite;
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    /* Jelly effect class */
+    .jelly-wobble {
+      animation: jellyWobble 0.8s ease-in-out;
+    }
+
+    /* Card header */
+    .card-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      transform: translateZ(40px);
+    }
+
+    .brand-name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      letter-spacing: 1px;
+      text-shadow: 0 2px 5px rgba(211, 47, 47, 0.3);
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: var(--text-medium);
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    /* Form elements styling */
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transform: translateZ(30px);
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--primary-dark);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transform: translateZ(20px);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid rgba(211, 47, 47, 0.3);
+      border-radius: var(--border-radius);
+      color: var(--text-dark);
+      transition: var(--transition);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transform: translateZ(20px);
+    }
+
+    .form-input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.2);
+      outline: none;
+      transform: translateZ(30px);
+    }
+
+    .input-icon {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%) translateZ(20px);
+      color: var(--primary-color);
+      opacity: 0.7;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .input-icon:hover {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.1) translateZ(20px);
+    }
+
+    /* Password strength indicator */
+    .password-strength {
+      height: 4px;
+      background: #eee;
+      border-radius: 2px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+      position: relative;
+      transform: translateZ(20px);
+    }
+
+    .strength-meter {
+      height: 100%;
+      width: 0;
+      background: #ff5252;
+      transition: width 0.3s ease;
+    }
+
+    /* Form actions */
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.5rem;
+      transform: translateZ(20px);
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+    }
+
+    .remember-me input {
+      margin-right: 0.5rem;
+    }
+
+    .forgot-password {
+      font-size: 0.85rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: var(--transition);
+      transform: translateZ(20px);
+    }
+
+    .forgot-password:hover {
+      color: var(--primary-darker);
+      text-decoration: underline;
+    }
+
+    /* Submit button */
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transform: translateZ(30px);
+    }
+
+    .submit-btn:hover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-darker));
+      transform: translateZ(40px) translateY(-3px);
+      box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
+    }
+
+    .submit-btn:active {
+      transform: translateZ(30px);
+    }
+
+    /* Social login options */
+    .social-login {
+      margin: 1.5rem 0;
+      position: relative;
+      text-align: center;
+      transform: translateZ(20px);
+    }
+
+    .social-login::before,
+    .social-login::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 30%;
+      height: 1px;
+      background: rgba(211, 47, 47, 0.3);
+      transform: translateZ(10px);
+    }
+
+    .social-login::before {
+      left: 0;
+    }
+
+    .social-login::after {
+      right: 0;
+    }
+
+    .social-login-text {
+      display: inline-block;
+      padding: 0 1rem;
+      font-size: 0.85rem;
+      color: var(--text-medium);
+      background: var(--bg-light);
+      position: relative;
+      z-index: 1;
+      transform: translateZ(20px);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      transform: translateZ(20px);
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transform: translateZ(20px);
+    }
+
+    .social-icon:hover {
+      transform: translateZ(30px) translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .facebook {
+      background: #3b5998;
+    }
+
+    .google {
+      background: #db4437;
+    }
+
+    .apple {
+      background: #000;
+    }
+
+    /* Registration prompt */
+    .register-prompt {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      transform: translateZ(20px);
+    }
+
+    .register-link {
+      color: var(--primary-color);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      margin-left: 0.5rem;
+    }
+
+    .register-link:hover {
+      color: var(--primary-darker);
+      text-decoration: underline;
+    }
+
+    /* Loading overlay */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .spinner {
+      width: 70px;
+      height: 70px;
+      border: 6px solid rgba(255, 255, 255, 0.1);
+      border-top-color: var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1.5rem;
+    }
+
+    .loading-text {
+      color: white;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    /* Error messages */
+    .error-message {
+      color: var(--primary-color);
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+      display: none;
+      transform: translateZ(20px);
+    }
+
+    /* Success message */
+    .success-message {
+      background: rgba(56, 142, 60, 0.2);
+      color: var(--secondary-color);
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      display: none;
+      animation: fadeIn 0.5s ease-out;
+      transform: translateZ(30px);
+    }
+
+    /* Animations */
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      .auth-container {
+        width: 90%;
+        min-height: auto;
+        padding: 1.5rem 0;
+      }
+      
+      .auth-card {
+        padding: 1.5rem;
+      }
+      
+      .card-header {
+        margin-bottom: 1.5rem;
+      }
+      
+      .social-login::before,
+      .social-login::after {
+        width: 25%;
+      }
+    }
+
+    /* Accessibility focus styles */
+    a:focus,
+    button:focus,
+    input:focus {
+      outline: 3px solid rgba(211, 47, 47, 0.5);
+      outline-offset: 2px;
+    }
+
+    /* Custom checkbox */
+    .custom-checkbox {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      transform: translateZ(20px);
+    }
+
+    .custom-checkbox input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .checkmark {
+      height: 18px;
+      width: 18px;
+      background: white;
+      border: 2px solid var(--primary-color);
+      border-radius: 4px;
+      margin-right: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .custom-checkbox input:checked ~ .checkmark {
+      background: var(--primary-color);
+    }
+
+    .checkmark::after {
+      content: "\f00c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: white;
+      font-size: 10px;
+      display: none;
+    }
+
+    .custom-checkbox input:checked ~ .checkmark::after {
+      display: block;
+    }
+  </style>
 </head>
-    
-
 <body>
-    <div class="login-container">
-        <h1>LOGIN</h1>  <!-- Main header -->
-        <form>
-            <div class="input-group">
-                <label>Username</label>
-                <input type="text" placeholder="Enter username" required>
-            </div>
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" id="password" placeholder="Enter password" required>
-            </div>
-            <hr>  <!-- Horizontal divider -->
-            <button type="submit" class="login-button">Login</button>
-            <h3>Skip for now</h3>  <!-- Subheading -->
-            <div class="links">
-                <a href="#">Forgot Password?</a>
-                <a href="#">Don't have an account? Sign Up</a>
-            </div>
-        </form>
-    </div>
+  <!-- Background particles -->
+  <div class="bg-particle" style="width: 200px; height: 200px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+  <div class="bg-particle" style="width: 150px; height: 150px; bottom: 15%; right: 8%; animation-delay: 0.5s;"></div>
+  <div class="bg-particle" style="width: 100px; height: 100px; top: 30%; right: 15%; animation-delay: 1s;"></div>
 
-    <!-- JavaScript (keep this if you already have it) -->
-    <script>
-        function togglePassword() {
-            const passwordField = document.getElementById("password");
-            const showPassword = document.getElementById("show-password");
-            passwordField.type = showPassword.checked ? "text" : "password";
+  <!-- Main authentication container -->
+  <div class="auth-container" id="authContainer">
+    <div class="auth-card" id="authCard">
+      <!-- Card header -->
+      <div class="card-header">
+        <h1 class="brand-name">X-FITNESS</h1>
+        <p class="tagline">Your ultimate fitness companion</p>
+      </div>
+
+      <!-- Success message placeholder -->
+      <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle"></i> Login successful! Redirecting to your dashboard...
+      </div>
+
+      <!-- Main login form -->
+      <form class="auth-form" id="loginForm">
+        <!-- Email field -->
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" class="form-input" placeholder="Enter your registered email" required>
+          <i class="fas fa-envelope input-icon"></i>
+          <div class="error-message" id="emailError">Please enter a valid email address</div>
+        </div>
+
+        <!-- Password field -->
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+          <i class="fas fa-eye input-icon toggle-password" id="togglePassword"></i>
+          <div class="password-strength">
+            <div class="strength-meter" id="strengthMeter"></div>
+          </div>
+          <div class="error-message" id="passwordError">Password must be at least 8 characters</div>
+        </div>
+
+        <!-- Form actions (remember me and forgot password) -->
+        <div class="form-actions">
+          <label class="custom-checkbox">
+            <input type="checkbox" id="rememberMe">
+            <span class="checkmark"></span>
+            Remember me
+          </label>
+          <a href="/forgot-password" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span id="buttonText">Sign In</span>
+          <i class="fas fa-spinner fa-spin" id="buttonSpinner" style="display: none;"></i>
+        </button>
+
+        <!-- Social login divider -->
+        <div class="social-login">
+          <span class="social-login-text">Or continue with</span>
+        </div>
+
+        <!-- Social login options -->
+        <div class="social-icons">
+          <a href="#" class="social-icon facebook" aria-label="Login with Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon google" aria-label="Login with Google">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="#" class="social-icon apple" aria-label="Login with Apple">
+            <i class="fab fa-apple"></i>
+          </a>
+        </div>
+
+        <!-- Registration prompt -->
+        <p class="register-prompt">
+          Don't have an account?
+          <a href="/register" class="register-link">Create account</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Loading overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+    <p class="loading-text">Securing your access...</p>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script>
+    // DOM Content Loaded event
+    document.addEventListener('DOMContentLoaded', function() {
+      const authContainer = document.getElementById('authContainer');
+      const authCard = document.getElementById('authCard');
+      let isHovering = false;
+
+      // Enhanced 3D effects
+      const apply3DEffect = (x, y) => {
+        const centerX = authContainer.offsetWidth / 2;
+        const centerY = authContainer.offsetHeight / 2;
+        
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        
+        authCard.style.transform = `
+          perspective(1000px)
+          rotateX(${rotateX}deg)
+          rotateY(${rotateY}deg)
+          scale(1.03)
+        `;
+        authCard.style.boxShadow = `var(--box-shadow-hover)`;
+      };
+
+      // Mouse enter effect
+      authContainer.addEventListener('mouseenter', () => {
+        isHovering = true;
+      });
+
+      // Mouse move effect
+      authContainer.addEventListener('mousemove', (e) => {
+        if (isHovering) {
+          apply3DEffect(e.clientX, e.clientY);
         }
-    </script>
+      });
+
+      // Mouse leave effect
+      authContainer.addEventListener('mouseleave', () => {
+        isHovering = false;
+        authCard.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        authCard.style.boxShadow = 'var(--box-shadow)';
+      });
+
+      // Click effect
+      authContainer.addEventListener('mousedown', () => {
+        authCard.classList.add('jelly-wobble');
+        authCard.style.transform = 'perspective(1000px) rotateX(8deg) rotateY(8deg) scale(0.98)';
+      });
+
+      // Reset after click
+      authContainer.addEventListener('mouseup', () => {
+        if (isHovering) {
+          const rect = authContainer.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          apply3DEffect(centerX, centerY);
+        }
+      });
+
+      // Remove animation class after it completes
+      authCard.addEventListener('animationend', () => {
+        authCard.classList.remove('jelly-wobble');
+      });
+
+      // Touch support for mobile
+      authContainer.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        apply3DEffect(touch.clientX, touch.clientY);
+        authCard.classList.add('jelly-wobble');
+      });
+
+      authContainer.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        apply3DEffect(touch.clientX, touch.clientY);
+      });
+
+      authContainer.addEventListener('touchend', () => {
+        authCard.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+      });
+
+      // Password visibility toggle
+      const togglePassword = document.getElementById('togglePassword');
+      const passwordInput = document.getElementById('password');
+      
+      togglePassword.addEventListener('click', function() {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        this.classList.toggle('fa-eye-slash', isPassword);
+        this.classList.toggle('fa-eye', !isPassword);
+      });
+
+      // Password strength indicator
+      passwordInput.addEventListener('input', function() {
+        const strengthMeter = document.getElementById('strengthMeter');
+        const strength = calculatePasswordStrength(this.value);
+        strengthMeter.style.width = `${strength.percentage}%`;
+        strengthMeter.style.backgroundColor = strength.color;
+      });
+
+      // Form validation
+      const loginForm = document.getElementById('loginForm');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const emailError = document.getElementById('emailError');
+      const passwordError = document.getElementById('passwordError');
+      const submitBtn = document.getElementById('submitBtn');
+      const buttonText = document.getElementById('buttonText');
+      const buttonSpinner = document.getElementById('buttonSpinner');
+      const successMessage = document.getElementById('successMessage');
+      const loadingOverlay = document.getElementById('loadingOverlay');
+
+      // Email validation on blur
+      emailInput.addEventListener('blur', function() {
+        if (!validateEmail(this.value)) {
+          emailError.style.display = 'block';
+          this.style.borderColor = 'var(--primary-color)';
+        } else {
+          emailError.style.display = 'none';
+          this.style.borderColor = 'rgba(211, 47, 47, 0.3)';
+        }
+      });
+
+      // Password validation on blur
+      passwordInput.addEventListener('blur', function() {
+        if (this.value.length < 8) {
+          passwordError.style.display = 'block';
+          this.style.borderColor = 'var(--primary-color)';
+        } else {
+          passwordError.style.display = 'none';
+          this.style.borderColor = 'rgba(211, 47, 47, 0.3)';
+        }
+      });
+
+      // Form submission
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validate form
+        const isEmailValid = validateEmail(emailInput.value);
+        const isPasswordValid = passwordInput.value.length >= 8;
+        
+        if (!isEmailValid) {
+          emailError.style.display = 'block';
+          emailInput.focus();
+          return;
+        }
+        
+        if (!isPasswordValid) {
+          passwordError.style.display = 'block';
+          passwordInput.focus();
+          return;
+        }
+        
+        // Show loading state
+        buttonText.style.display = 'none';
+        buttonSpinner.style.display = 'inline-block';
+        submitBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+          // Show success message
+          successMessage.style.display = 'block';
+          
+          // Show loading overlay
+          loadingOverlay.classList.add('active');
+          
+          // Redirect after delay
+          setTimeout(() => {
+            window.location.href = '/dashboard';
+          }, 2000);
+        }, 1500);
+      });
+
+      // Helper functions
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      function calculatePasswordStrength(password) {
+        let strength = 0;
+        if (password.length >= 8) strength += 20;
+        if (password.length >= 12) strength += 20;
+        if (/[A-Z]/.test(password)) strength += 20;
+        if (/[0-9]/.test(password)) strength += 20;
+        if (/[^A-Za-z0-9]/.test(password)) strength += 20;
+        
+        let color;
+        if (strength < 40) color = '#ff5252'; // Weak
+        else if (strength < 80) color = '#ffab40'; // Medium
+        else color = '#4caf50'; // Strong
+        
+        return { percentage: strength, color };
+      }
+    });
+  </script>
 </body>
-    
 </html>
