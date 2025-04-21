@@ -1,4 +1,9 @@
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
 nav {
     position: fixed;
     width: 100%;
@@ -9,6 +14,7 @@ nav {
     background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
 }
+
 /* Home Section */
 #home {
     position: relative;
