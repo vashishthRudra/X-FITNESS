@@ -3,211 +3,122 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login - X-FITNESS </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-FITNESS Login</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: Arial, sans-serif;
-            background: #f0f2f5;
+            background-color: #f4f4f9;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
-        
-        .login-box {
-            background: #fff;
+        .login-container {
+            background: white;
             padding: 30px;
-            width: 400px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-            width: 400px;
-            animation: fadeIn 1s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
         }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
         }
-        
-        .logo {
-            display: flex;
-            justify-content: center;
+        .input-group {
             margin-bottom: 15px;
+            text-align: left;
         }
-        
-        .logo img {
-            width: 60px;
-            height: 60px;
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
-        
-        .login-box h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #d32f2f;
-    font-size: 28px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-        }
-        
-        .Gym-name {
-            input {
-    width: 100%;
-    padding: 14px;
-    margin: 12px 0;
-    border: 1px solid #bbb;
-    border-radius: 8px;
-    font-size: 15px;
-}
-
-        }
-        
-        input {
+        .input-group input {
             width: 100%;
             padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 6px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
         }
-        
-        .show-password {
-           button {
-    width: 100%;
-    padding: 14px;
-    background-color: #ff5722; /* orange */
-    color: white;
-    .skip-btn {
-    background-color: #9e9e9e;
-    margin-top: 10px;
-}
-.skip-btn:hover {
-    background-color: #757575;
-}
-           
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-button:hover {
-    background-color: #e64a19;
-}
-
+        hr {
+            margin: 20px 0;
+            border: 0.5px solid #eee;
         }
-        
-        .show-password input {
-            margin-right: 8px;
-        }
-        
-        button {
+        .login-button {
             width: 100%;
             padding: 12px;
             background-color: #007bff;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 5px;
+            font-size: 16px;
             cursor: pointer;
-            font-weight: bold;
+            margin-bottom: 15px;
         }
-        
-        button:hover {
+        .login-button:hover {
             background-color: #0056b3;
         }
-        
-        .link {
-            margin-top: 15px;
+        h3 {
             text-align: center;
+            color: #666;
+            margin: 10px 0;
+            cursor: pointer;
         }
-        
-       .link a {
-    color: #ff5722; 
-    font-size: 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 14px;
         }
-        
-        .link a:hover {
-    text-decoration: underline;
-    color: #e64a19;
-}
-
+        .links a {
+            color: #007bff;
+            text-decoration: none;
         }
-        
-       .skip-btn {
-    margin-top: 10px;
-    background-color: #6c757d;
-    color: white;
-    font-weight: bold;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-        }
-        
-        .skip-btn:hover {
-            background-color: #5a6268;
+        @media (max-width: 480px) {
+            .login-container {
+                width: 90%;
+            }
         }
     </style>
 </head>
+    
 
 <body>
-
-        </div>
-        <h2>Login</h2>
-        <p class="hospital-name">X-FITNESS</p>
-
-        <form onsubmit="event.preventDefault(); alert('Logging in...');">
-            <input type="text" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-
-            <div class="show-password">
-                <input type="checkbox" onclick="togglePassword()"> Show Password
+    <div class="login-container">
+        <h1>LOGIN</h1>  <!-- Main header -->
+        <form>
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" placeholder="Enter username" required>
             </div>
-
-            <button type="submit">Login</button>
-
-            <button class="skip-btn" onclick="skipLogin()">Skip for now</button>
-
-            <div class="link">
-                <a href="#">Forgot Password?</a> <br>
-                <p>Don't have an account? <a href="#">Sign Up</a></p>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+            <hr>  <!-- Horizontal divider -->
+            <button type="submit" class="login-button">Login</button>
+            <h3>Skip for now</h3>  <!-- Subheading -->
+            <div class="links">
+                <a href="#">Forgot Password?</a>
+                <a href="#">Don't have an account? Sign Up</a>
             </div>
         </form>
     </div>
 
+    <!-- JavaScript (keep this if you already have it) -->
     <script>
         function togglePassword() {
-            const password = document.getElementById("password");
-            password.type = password.type === "password" ? "text" : "password";
-        }
-
-        function skipLogin() {
-            alert("Guest access enabled! Redirecting to homepage...");
-            // yahan redirect logic daalna ho to:
-            // window.location.href = "home.html";
+            const passwordField = document.getElementById("password");
+            const showPassword = document.getElementById("show-password");
+            passwordField.type = showPassword.checked ? "text" : "password";
         }
     </script>
-
 </body>
-
+    
 </html>
