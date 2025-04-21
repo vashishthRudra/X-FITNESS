@@ -61,6 +61,20 @@ nav {
 }
 
 /* Buttons */
+.cta-btn, .join-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4d4d;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+.cta-btn:hover, .join-btn:hover {
+    transform: scale(0.90);
+    background: #ff3333;
+}
 
 #contact {
     padding: 80px 50px;
