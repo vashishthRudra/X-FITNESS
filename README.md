@@ -16,7 +16,7 @@ We created this project with the goal of learning real-world **collaborative dev
 
 👥 Team Members
 
-- Rudra Vashisht (Manager)
+- Rudra Vashishth (Manager)
 - Namit Dhiman (Developer)
 - Parthesh Uppal (Developer)
 - Soham Dhiman (Website tester & designer)
