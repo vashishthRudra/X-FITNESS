@@ -271,5 +271,5 @@ h2 {
 #contact-form {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
 }
