@@ -32,6 +32,17 @@ nav {
     list-style: none;
     gap: 30px;
 }
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 1s;
+}
+.nav-links a {
+    color: ;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
 
 
 /* Home Section */
