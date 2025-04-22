@@ -261,4 +261,9 @@ h2 {
     padding: 80px 50px;
     background: #f5f5f5;
 }
-
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 90px;
+}
