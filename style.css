@@ -45,6 +45,12 @@ nav {
 .nav-links a:hover {
     color: #ff4d4d;
 }
+.nav-toggle {
+    display: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
 
 
 
