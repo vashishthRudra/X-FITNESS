@@ -273,3 +273,17 @@ h2 {
     flex-direction: column;
     gap: 20px;
 }
+
+#contact-form button {
+    display: flex;
+    width: 90px;
+    height: 50px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    margin: 1px auto;    
+    background: #ff4d4d;
+    border: 0;
+    color: #fff;
+    transition: transform 0.3s, background 0.3s;
+}
