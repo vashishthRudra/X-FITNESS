@@ -264,6 +264,6 @@ h2 {
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-top: 90px;
+    gap: 50px;
+    margin-top: 40px;
 }
