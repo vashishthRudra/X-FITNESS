@@ -21,6 +21,12 @@ nav {
     background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
 }
+.logo {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 
 /* Home Section */
 #home {
