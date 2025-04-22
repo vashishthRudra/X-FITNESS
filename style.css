@@ -287,3 +287,8 @@ h2 {
     color: #fff;
     transition: transform 0.3s, background 0.3s;
 }
+
+#contact-form button:hover{
+    transform: scale(0.90);
+    background-color: #ff3333;
+}
