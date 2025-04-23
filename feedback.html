@@ -310,4 +310,76 @@
             position: relative;
             overflow: hidden;
         }
+         .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .btn:hover i {
+            transform: translateX(3px);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::after {
+            left: 100%;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            border-top: 1px solid var(--light-gray);
+            padding-top: 1.5rem;
+        }
+
+        .thank-you {
+            text-align: center;
+            padding: 4rem 2rem;
+            display: none;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .thank-you h2 {
+            color: var(--primary-red);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .thank-you p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .thank-you .icon {
+            font-size: 4rem;
+            color: var(--primary-red);
+            margin-bottom: 1.5rem;
+            animation: bounce 1s infinite alternate;
+        }
 
