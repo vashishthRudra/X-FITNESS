@@ -42,3 +42,11 @@
 .bmi-input-group select {
     width: 35%;
 }
+ .bmi-button {
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+ #bmiResult {
+    margin-top: 15px;
+    font-weight: bold;
+} 
