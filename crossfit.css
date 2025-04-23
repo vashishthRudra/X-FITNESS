@@ -80,5 +80,14 @@ blockquote {
     margin-top: 0;
     color: #990000;
 }
+/* 
+   PART 6: Testimonials Styling
+ */
+#testimonials blockquote {
+    border-left: 4px solid #b30000;
+    background-color: #fff5f5;
+    color: #660000;
+}
+
 
 
