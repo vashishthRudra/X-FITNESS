@@ -21,6 +21,34 @@ nav {
     background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
 }
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #ff4d4d;
+}
+.nav-toggle {
+    display: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
 
 /* Home Section */
 #home {
@@ -75,6 +103,24 @@ nav {
     transform: scale(0.90);
     background: #ff3333;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Classes Section */
+
+
+
+
+
+
 
 #contact {
     padding: 80px 50px;
@@ -256,3 +302,4 @@ h2 {
     color: #ff4d4d;
     margin-bottom: 20px;
 }
+

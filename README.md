@@ -16,18 +16,19 @@ We created this project with the goal of learning real-world **collaborative dev
 
 👥 Team Members
 
-- Rudra
-- Namit
-- Parthesh 
-- Soham
-- Shivansh 
+- Rudra Vashishth (Manager)
+- Namit Dhiman (Developer)
+- Parthesh Uppal (Developer)
+- Soham Dhiman (Website tester & designer)
+- Shivansh Sharma (Developer)
 
 ✨ Features
 
 - Responsive and user-friendly layout  
 - Clean navigation bar with multi-page structure  
 - Interactive sections using JavaScript  
-- Gallery of workout spaces and sessions  
+- Gallery of workout spaces and sessions
+- BMI calculator  
 - Functional contact form  
 - Organized file
 
@@ -38,8 +39,5 @@ Here’s a quick look at the homepage of X Fitness:
 
 > *Stay tuned for a live demo or video walkthrough soon!*
 
-📝 License
-
-This project is licensed under the **MIT License** – feel free to use, modify, and distribute.
 
 
