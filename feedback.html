@@ -567,5 +567,60 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="feedback">Your Feedback</label>
+                    <textarea id="feedback" name="feedback" required placeholder="Please share your detailed thoughts about your experience at X-FITNESS..."></textarea>
+                    <div class="char-counter"><span id="charCount">0</span>/500 characters</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="improvements">Suggestions for Improvement (Optional)</label>
+                    <textarea id="improvements" name="improvements" placeholder="What specific improvements would you like to see?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Would you recommend X-FITNESS to friends or family?</label>
+                    <div class="checkbox-group" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="checkbox-item">
+                            <input type="radio" id="recommend-yes" name="recommend" value="yes" required>
+                            <label for="recommend-yes">Absolutely</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="recommend-maybe" name="recommend" value="maybe">
+                            <label for="recommend-maybe">Possibly</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="recommend-no" name="recommend" value="no">
+                            <label for="recommend-no">Probably not</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2.5rem;">
+                    <button type="submit" class="btn">
+                        Submit Feedback <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div class="form-footer">
+                <p>Your opinion matters! We're committed to providing the best fitness experience.</p>
+            </div>
+        </div>
+
+        <div class="thank-you" id="thankYou">
+            <div class="icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h2>Thank You for Your Valuable Feedback!</h2>
+            <p>We truly appreciate you taking the time to share your experience with us.</p>
+            <p>Your insights help us continuously improve and deliver exceptional service to all our members.</p>
+            <div style="margin-top: 2rem;">
+                <button class="btn" id="newFeedback">
+                    Submit Another Response <i class="fas fa-redo"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
 
