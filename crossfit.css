@@ -88,6 +88,26 @@ blockquote {
     background-color: #fff5f5;
     color: #660000;
 }
+/* 
+   PART 7: Schedule Table Styling
+ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #cc0000;
+    text-align: center;
+}
+th {
+    background-color: #ffcccc;
+    color: #990000;
+}
+td {
+    background-color: #fff0f0;
+}
 
 
 
