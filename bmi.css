@@ -8,6 +8,7 @@
     position: relative;
 }
   #bmiModal {
+    position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
@@ -34,4 +35,10 @@
 .bmi-input-group select {
     padding: 9px;
     box-sizing: border-box;
+}
+.bmi-input-group input {
+    width: 60%;
+}
+.bmi-input-group select {
+    width: 35%;
 }
