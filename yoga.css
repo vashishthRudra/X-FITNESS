@@ -44,3 +44,21 @@ h3 {
     color: #e74c3c;
     margin-top: 15px;
 }
+p, ul {
+    color: #555;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.plan {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
