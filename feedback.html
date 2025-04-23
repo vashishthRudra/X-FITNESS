@@ -70,3 +70,64 @@
             background: linear-gradient(90deg, var(--primary-red), var(--light-red));
             border-radius: 2px;
         }
+         h1 {
+            color: var(--dark-gray);
+            font-size: 2.2rem;
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(233, 236, 239, 0.5);
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-red), var(--light-red));
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--medium-gray);
+            transition: var(--transition);
+        }
