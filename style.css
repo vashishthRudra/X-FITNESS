@@ -156,6 +156,12 @@ nav {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.class-card img {
+    width: 100%;
+    height: px;
+    object-fit: fill;
+    transition: transform 0.3s;
+}
 
 
 
