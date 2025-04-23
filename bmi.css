@@ -2,6 +2,18 @@
     background-color: white;
     margin: 20% auto;
     padding: 20px;
-    border-radius: 8px
+    border-radius: 10px
     max-width: 400px;
+}
+
+.bmi-input-group {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bmi-input-group input,
+.bmi-input-group select {
+    padding: 9px;
+    box-sizing: border-box;
 }
