@@ -152,13 +152,13 @@ nav {
 .class-card {
     position: relative;
     overflow: hidden;
-    border-radius: px;
+    border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .class-card img {
     width: 100%;
-    height: px;
+    height: 250px;
     object-fit: fill;
     transition: transform 0.3s;
 }
