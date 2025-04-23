@@ -66,3 +66,19 @@ blockquote {
     margin: 20px 0;
 }
 
+/* 
+   PART 5: Plan Cards Styling
+ */
+.plan {
+    border: 2px solid #cc0000;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff0f0;
+}
+.plan h3 {
+    margin-top: 0;
+    color: #990000;
+}
+
+
