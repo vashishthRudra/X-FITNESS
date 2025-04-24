@@ -25,13 +25,13 @@ h1 {
 }
 
 .diet-plan-box {
-    background-color: ;
-    border-radius: ;
-    box-shadow: ;
-    padding: ;
-    width: auto;
-    box-sizing: ;
-    transition: ;
+    background-color:  #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) ;
+    padding: 30px 20px;
+    width: 280px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
 }
 
 .diet-plan-box:hover {
@@ -39,12 +39,12 @@ h1 {
 }
 
 .diet-plan-box h2 {
-    color: ;
+    color: #e74c3c ;
     margin-bottom: 15px;
 }
 
 .diet-plan-box p {
-    color: ;
-    font-size:;
-    margin-bottom: ;
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 25px;
 }
