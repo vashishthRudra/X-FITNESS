@@ -83,11 +83,17 @@ blockquote {
 /* 
    PART 6: Testimonials Styling
  */
-#testimonials blockquote {
-    border-left: 4px solid #b30000;
-    background-color: #fff5f5;
-    color: #660000;
+#testimonials {
+    text-align: center;
+    position: relative;
 }
+.testimonial {
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+    max-width: 600px;
+    margin: auto;
+}
+
 /* 
    PART 7: Schedule Table Styling
  */
