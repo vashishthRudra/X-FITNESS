@@ -20,6 +20,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 // Modal Functionality
+const modal = document.getElementById('joinModal');
+const joinBtn = document.querySelector('.join-btn');
+const closeBtn = document.querySelector('.close');
+
+joinBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+});
+
 
 // Form Submissions
 
