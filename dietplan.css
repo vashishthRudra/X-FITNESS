@@ -17,3 +17,34 @@ h1 {
     color: #2c3e50;
     margin-bottom: 40px;
 }
+.diet-plan-boxes {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.diet-plan-box {
+    background-color: ;
+    border-radius: ;
+    box-shadow: ;
+    padding: ;
+    width: auto;
+    box-sizing: ;
+    transition: ;
+}
+
+.diet-plan-box:hover {
+    transform: translateY(-10px);
+}
+
+.diet-plan-box h2 {
+    color: ;
+    margin-bottom: 15px;
+}
+
+.diet-plan-box p {
+    color: ;
+    font-size:;
+    margin-bottom: ;
+}
