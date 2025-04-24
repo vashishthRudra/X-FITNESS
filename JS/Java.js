@@ -85,5 +85,13 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+document.querySelectorAll('.service-card').forEach(card => {
+    card.style.opacity = '';
+    card.style.transform = 'translateY(50px)';
+    card.style.transition = 'all 0.5s ease-out';
+    observer.observe(card);
+});
+
+
 
 
