@@ -16,3 +16,18 @@ window.addEventListener('click', (event) => {
       resetFields();
     }
   });
+function calculateBMI() {
+    const weightInput = document.getElementById('weight').value;
+    const heightInput = document.getElementById('height').value;
+    const weightUnit = document.getElementById('weightUnit').value;
+    const heightUnit = document.getElementById('heightUnit').value;
+    const resultDiv = document.getElementById('bmiResult');
+    const categoryDiv = document.getElementById('bmiCategory');
+    const healthTipDiv = document.getElementById('healthTip');
+
+    if (!weightInput || !heightInput || weightInput <= 0 || heightInput <= 0) {
+      resultDiv.textContent = 'Please enter valid weight and height values.';
+      categoryDiv.textContent = '';
+      healthTipDiv.textContent = '';
+      return;
+    }
