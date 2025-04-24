@@ -647,5 +647,51 @@
             const formContainer = document.getElementById('feedbackForm');
             const thankYouDiv = document.getElementById('thankYou');
             const newFeedbackBtn = document.getElementById('newFeedback');
+             feedbackForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Form validation
+                let isValid = true;
+                const requiredFields = feedbackForm.querySelectorAll('[required]');
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = 'var(--primary-red)';
+                        isValid = false;
+                        
+                        // Add shake animation
+                        field.style.animation = 'shake 0.5s';
+                        setTimeout(() => {
+                            field.style.animation = '';
+                        }, 500);
+                    }
+                });
+                
+                if (!isValid) {
+                    return;
+                }
+                
+                // Show loading state
+                const submitBtn = feedbackForm.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                submitBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // Hide form and show thank you message
+                    formContainer.style.display = 'none';
+                    thankYouDiv.style.display = 'block';
+                    
+                    // Collect form data
+                    const formData = new FormData(feedbackForm);
+                    const formObject = {};
+                    formData.forEach((value, key) => {
+                        formObject[key] = value;
+                    });
+                    
+                    console.log('Form data submitted:', formObject);
+                    // In a real application, you would send this data to your server
+                }, 1500);
+            });
 
 
