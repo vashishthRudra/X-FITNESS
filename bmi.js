@@ -10,3 +10,9 @@ const bmiModal = document.getElementById('bmiModal');
     bmiModal.style.display = 'none';
     resetFields();
   });
+window.addEventListener('click', (event) => {
+    if (event.target === bmiModal) {
+      bmiModal.style.display = 'none';
+      resetFields();
+    }
+  });
