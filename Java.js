@@ -59,6 +59,16 @@ joinForm.addEventListener('submit', (e) => {
 
 // Navbar Background Change on Scroll
 
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.style.background = 'rgba(0, 0, 0, 0.9)';
+    } else {
+        nav.style.background = 'rgba(0, 0, 0, 0.8)';
+    }
+});
+
+
 // Animate Services on Scroll
 
 
