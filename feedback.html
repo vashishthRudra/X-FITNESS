@@ -694,4 +694,82 @@
                 }, 1500);
             });
 
+            // New feedback button
+            newFeedbackBtn.addEventListener('click', function() {
+                feedbackForm.reset();
+                charCount.textContent = '0';
+                charCounter.classList.remove('warning');
+                
+                // Reset form styles
+                const inputs = feedbackForm.querySelectorAll('input, textarea, select');
+                inputs.forEach(input => {
+                    input.style.borderColor = '';
+                });
+                
+                // Reset submit button
+                const submitBtn = feedbackForm.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = 'Submit Feedback <i class="fas fa-paper-plane"></i>';
+                submitBtn.disabled = false;
+                
+                formContainer.style.display = 'block';
+                thankYouDiv.style.display = 'none';
+            });
+
+            // Rating hover effect
+            const ratingOptions = document.querySelectorAll('.rating-option');
+            ratingOptions.forEach(option => {
+                option.addEventListener('mouseenter', function() {
+                    const ratingValue = this.querySelector('input').value;
+                    highlightRatings(ratingValue);
+                });
+                
+                option.addEventListener('mouseleave', function() {
+                    const checkedOption = document.querySelector('.rating-option input:checked');
+                    if (checkedOption) {
+                        highlightRatings(checkedOption.value);
+                    } else {
+                        resetRatingColors();
+                    }
+                });
+            });
+
+            function highlightRatings(upToValue) {
+                resetRatingColors();
+                ratingOptions.forEach(option => {
+                    if (option.querySelector('input').value <= upToValue) {
+                        const circle = option.querySelector('.rating-circle');
+                        circle.style.background = 'linear-gradient(135deg, var(--light-red), var(--primary-red))';
+                        circle.style.color = 'var(--white)';
+                        circle.style.borderColor = 'var(--dark-red)';
+                    }
+                });
+            }
+
+            function resetRatingColors() {
+                ratingOptions.forEach(option => {
+                    const input = option.querySelector('input');
+                    if (!input.checked) {
+                        const circle = option.querySelector('.rating-circle');
+                        circle.style.background = 'var(--light-gray)';
+                        circle.style.color = 'var(--medium-gray)';
+                        circle.style.borderColor = 'transparent';
+                    }
+                });
+            }
+
+            // Add shake animation for invalid fields
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    20%, 60% { transform: translateX(-5px); }
+                    40%, 80% { transform: translateX(5px); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
+
 
