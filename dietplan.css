@@ -48,3 +48,17 @@ h1 {
     font-size: 16px;
     margin-bottom: 25px;
 }
+.btn {
+    display: ;
+    background-color: ;
+    color: ;
+    padding: ;
+    border-radius: ;
+    text-decoration: none;
+    font-weight: bold;
+    transition: ;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+}
