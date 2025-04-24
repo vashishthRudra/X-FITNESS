@@ -31,3 +31,27 @@ function calculateBMI() {
       healthTipDiv.textContent = '';
       return;
     }
+  let weightKg = weightUnit === 'lbs' ? weightInput * 0.453592 : parseFloat(weightInput);
+    let heightM = heightUnit === 'in' ? heightInput * 0.0254 : heightInput / 100;
+
+    const bmi = weightKg / (heightM * heightM);
+    const bmiRounded = bmi.toFixed(2);
+
+    resultDiv.textContent = `Your BMI is ${bmiRounded}`;
+
+    let category = '';
+    let healthTip = '';
+
+    if (bmi < 18.5) {
+      category = 'Underweight';
+      healthTip = 'Consider a balanced diet to gain weight healthily.';
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      category = 'Normal weight';
+      healthTip = 'Maintain your healthy lifestyle!';
+    } else if (bmi >= 25 && bmi < 29.9) {
+      category = 'Overweight';
+      healthTip = 'Consider regular exercise and a healthy diet.';
+    } else {
+      category = 'Obesity';
+      healthTip = 'Consult a healthcare provider for guidance.';
+    }
