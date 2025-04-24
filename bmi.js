@@ -55,3 +55,16 @@ function calculateBMI() {
       category = 'Obesity';
       healthTip = 'Consult a healthcare provider for guidance.';
     }
+    categoryDiv.textContent = `Category: ${category}`;
+    healthTipDiv.textContent = `Health Tip: ${healthTip}`;
+  }
+
+  function resetFields() {
+    document.getElementById('weight').value = '';
+    document.getElementById('height').value = '';
+    document.getElementById('weightUnit').value = 'kg';
+    document.getElementById('heightUnit').value = 'cm';
+    document.getElementById('bmiResult').textContent = '';
+    document.getElementById('bmiCategory').textContent = '';
+    document.getElementById('healthTip').textContent = '';
+  }
