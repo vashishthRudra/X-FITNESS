@@ -92,6 +92,10 @@ blockquote {
     transition: opacity 0.5s ease-in-out;
     max-width: 600px;
     margin: auto;
+   background-color: #fff5f5;
+   color: #660000;
+   padding: 15px;
+   border-left: 4px solid #b30000;
 }
 
 /* 
