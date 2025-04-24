@@ -72,3 +72,8 @@ window.addEventListener('scroll', () => {
 // Animate Services on Scroll
 
 
+const observerOptions = {
+    threshold: 0.2
+};
+
+
