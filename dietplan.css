@@ -49,14 +49,14 @@ h1 {
     margin-bottom: 25px;
 }
 .btn {
-    display: ;
-    background-color: ;
-    color: ;
-    padding: ;
-    border-radius: ;
+    display:  inline-block;
+    background-color:  #e74c3c;
+    color: #fff;
+    padding: 12px 25px ;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
-    transition: ;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
