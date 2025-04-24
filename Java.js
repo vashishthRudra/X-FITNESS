@@ -40,6 +40,22 @@ window.addEventListener('click', (e) => {
 
 
 // Form Submissions
+const contactForm = document.getElementById('contact-form');
+const joinForm = document.getElementById('join-form');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for your message! We will get back to you soon.');
+    contactForm.reset();
+});
+
+joinForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for joining! We will contact you with further details.');
+    joinForm.reset();
+    modal.style.display = 'none';
+});
+
 
 // Navbar Background Change on Scroll
 
