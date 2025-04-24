@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-FITNESS - Member Experience Survey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-red: #e63946;
+            --dark-red: #c1121f;
+            --light-red: #ff758f;
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --light-gray: #e9ecef;
+            --medium-gray: #adb5bd;
+            --dark-gray: #212529;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--off-white);
+            color: var(--dark-gray);
+            line-height: 1.7;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 117, 143, 0.05) 0%, rgba(255, 117, 143, 0.05) 90%),
+                radial-gradient(circle at 90% 80%, rgba(230, 57, 70, 0.05) 0%, rgba(230, 57, 70, 0.05) 90%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .logo {
+            color: var(--primary-red);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--light-red));
+            border-radius: 2px;
+        }
+         h1 {
+            color: var(--dark-gray);
+            font-size: 2.2rem;
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(233, 236, 239, 0.5);
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-red), var(--light-red));
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--medium-gray);
+            transition: var(--transition);
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--off-white);
+            color: var(--dark-gray);
+        }
+
+        textarea {
+            padding-left: 1rem;
+            min-height: 150px;
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--primary-red);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+            background-color: var(--white);
+        }
+
+        input:focus + .input-icon {
+            color: var(--primary-red);
+        }
+
+        .rating-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .rating-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            flex: 1;
+            max-width: 60px;
+        }
+
+        .rating-option input {
+            display: none;
+        }
+
+        .rating-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+            transition: var(--transition);
+            font-weight: 700;
+            color: var(--medium-gray);
+            border: 2px solid transparent;
+        }
+        .rating-option:hover .rating-circle {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.2);
+        }
+
+        .rating-option input:checked + .rating-circle {
+            background-color: var(--primary-red);
+            color: var(--white);
+            border-color: var(--dark-red);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .rating-label {
+            font-size: 0.8rem;
+            color: var(--medium-gray);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .checkbox-group {
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-item input {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--light-gray);
+            border-radius: 4px;
+            margin-right: 0.75rem;
+            position: relative;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .checkbox-item input:checked {
+            background-color: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+
+        .checkbox-item input:checked::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            color: white;
+            font-size: 0.8rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .checkbox-item label {
+            margin-bottom: 0;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .checkbox-item:hover label {
+            color: var(--primary-red);
+        }
+
+        .char-counter {
+            font-size: 0.8rem;
+            color: var(--medium-gray);
+            text-align: right;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .char-counter.warning {
+            color: var(--primary-red);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary-red), var(--light-red));
+            color: var(--white);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+         .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .btn:hover i {
+            transform: translateX(3px);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::after {
+            left: 100%;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            border-top: 1px solid var(--light-gray);
+            padding-top: 1.5rem;
+        }
+
+        .thank-you {
+            text-align: center;
+            padding: 4rem 2rem;
+            display: none;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .thank-you h2 {
+            color: var(--primary-red);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .thank-you p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .thank-you .icon {
+            font-size: 4rem;
+            color: var(--primary-red);
+            margin-bottom: 1.5rem;
+            animation: bounce 1s infinite alternate;
+        }
+         @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-15px); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                margin: 1.5rem auto;
+                padding: 0 1rem;
+            }
+            
+            .form-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .rating-circle {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-container {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.1s;
+        }
+
+        .form-group {
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .form-group:nth-child(1) { animation-delay: 0.2s; }
+        .form-group:nth-child(2) { animation-delay: 0.3s; }
+        .form-group:nth-child(3) { animation-delay: 0.4s; }
+        .form-group:nth-child(4) { animation-delay: 0.5s; }
+        .form-group:nth-child(5) { animation-delay: 0.6s; }
+        .form-group:nth-child(6) { animation-delay: 0.7s; }
+        .form-group:nth-child(7) { animation-delay: 0.8s; }
+        .form-group:nth-child(8) { animation-delay: 0.9s; }
+        .form-group:nth-child(9) { animation-delay: 1.0s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">X-FITNESS</div>
+            <h1>Member Experience Survey</h1>
+            <p class="subtitle">Your feedback helps us elevate your fitness journey to the next level</p>
+        </header>
+        <div class="form-container" id="feedbackForm">
+            <form id="feedback-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number (Optional)</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-phone input-icon"></i>
+                        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="membership">Membership Type</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-id-card input-icon"></i>
+                        <select id="membership" name="membership" required>
+                            <option value="" disabled selected>Select your membership</option>
+                            <option value="basic">Basic</option>
+                            <option value="premium">Premium</option>
+                            <option value="elite">Elite</option>
+                            <option value="student">Student</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>How would you rate your overall experience at X-FITNESS?</label>
+                    <div class="rating-container">
+                        <label class="rating-option">
+                            <input type="radio" name="rating" value="1" required>
+                            <div class="rating-circle">1</div>
+                            <span class="rating-label">Poor</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="rating" value="2">
+                            <div class="rating-circle">2</div>
+                            <span class="rating-label">Fair</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="rating" value="3">
+                            <div class="rating-circle">3</div>
+                            <span class="rating-label">Good</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="rating" value="4">
+                            <div class="rating-circle">4</div>
+                            <span class="rating-label">Very Good</span>
+                        </label>
+                        <label class="rating-option">
+                            <input type="radio" name="rating" value="5">
+                            <div class="rating-circle">5</div>
+                            <span class="rating-label">Excellent</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Which areas of our gym did you use? (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cardio" name="areas" value="cardio">
+                            <label for="cardio">Cardio Equipment</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="weights" name="areas" value="weights">
+                            <label for="weights">Weight Training</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="classes" name="areas" value="classes">
+                            <label for="classes">Group Classes</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="pool" name="areas" value="pool">
+                            <label for="pool">Swimming Pool</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="pt" name="areas" value="pt">
+                            <label for="pt">Personal Training</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="locker" name="areas" value="locker">
+                            <label for="locker">Locker Rooms</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sauna" name="areas" value="sauna">
+                            <label for="sauna">Sauna/Steam Room</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cafe" name="areas" value="cafe">
+                            <label for="cafe">Cafe/Bar</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="feedback">Your Feedback</label>
+                    <textarea id="feedback" name="feedback" required placeholder="Please share your detailed thoughts about your experience at X-FITNESS..."></textarea>
+                    <div class="char-counter"><span id="charCount">0</span>/500 characters</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="improvements">Suggestions for Improvement (Optional)</label>
+                    <textarea id="improvements" name="improvements" placeholder="What specific improvements would you like to see?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Would you recommend X-FITNESS to friends or family?</label>
+                    <div class="checkbox-group" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="checkbox-item">
+                            <input type="radio" id="recommend-yes" name="recommend" value="yes" required>
+                            <label for="recommend-yes">Absolutely</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="recommend-maybe" name="recommend" value="maybe">
+                            <label for="recommend-maybe">Possibly</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="recommend-no" name="recommend" value="no">
+                            <label for="recommend-no">Probably not</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2.5rem;">
+                    <button type="submit" class="btn">
+                        Submit Feedback <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div class="form-footer">
+                <p>Your opinion matters! We're committed to providing the best fitness experience.</p>
+            </div>
+        </div>
+
+        <div class="thank-you" id="thankYou">
+            <div class="icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h2>Thank You for Your Valuable Feedback!</h2>
+            <p>We truly appreciate you taking the time to share your experience with us.</p>
+            <p>Your insights help us continuously improve and deliver exceptional service to all our members.</p>
+            <div style="margin-top: 2rem;">
+                <button class="btn" id="newFeedback">
+                    Submit Another Response <i class="fas fa-redo"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Character counter for feedback textarea
+            const feedbackTextarea = document.getElementById('feedback');
+            const charCount = document.getElementById('charCount');
+            const charCounter = document.querySelector('.char-counter');
+            
+            feedbackTextarea.addEventListener('input', function() {
+                const currentLength = this.value.length;
+                charCount.textContent = currentLength;
+                
+                if (currentLength > 500) {
+                    this.value = this.value.substring(0, 500);
+                    charCount.textContent = 500;
+                    charCounter.classList.add('warning');
+                } else {
+                    charCounter.classList.remove('warning');
+                }
+            });
+
+            // Form submission
+            const feedbackForm = document.getElementById('feedback-form');
+            const formContainer = document.getElementById('feedbackForm');
+            const thankYouDiv = document.getElementById('thankYou');
+            const newFeedbackBtn = document.getElementById('newFeedback');
+             feedbackForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Form validation
+                let isValid = true;
+                const requiredFields = feedbackForm.querySelectorAll('[required]');
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = 'var(--primary-red)';
+                        isValid = false;
+                        
+                        // Add shake animation
+                        field.style.animation = 'shake 0.5s';
+                        setTimeout(() => {
+                            field.style.animation = '';
+                        }, 500);
+                    }
+                });
+                
+                if (!isValid) {
+                    return;
+                }
+                
+                // Show loading state
+                const submitBtn = feedbackForm.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                submitBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // Hide form and show thank you message
+                    formContainer.style.display = 'none';
+                    thankYouDiv.style.display = 'block';
+                    
+                    // Collect form data
+                    const formData = new FormData(feedbackForm);
+                    const formObject = {};
+                    formData.forEach((value, key) => {
+                        formObject[key] = value;
+                    });
+                    
+                    console.log('Form data submitted:', formObject);
+                    // In a real application, you would send this data to your server
+                }, 1500);
+            });
+
+            // New feedback button
+            newFeedbackBtn.addEventListener('click', function() {
+                feedbackForm.reset();
+                charCount.textContent = '0';
+                charCounter.classList.remove('warning');
+                
+                // Reset form styles
+                const inputs = feedbackForm.querySelectorAll('input, textarea, select');
+                inputs.forEach(input => {
+                    input.style.borderColor = '';
+                });
+                
+                // Reset submit button
+                const submitBtn = feedbackForm.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = 'Submit Feedback <i class="fas fa-paper-plane"></i>';
+                submitBtn.disabled = false;
+                
+                formContainer.style.display = 'block';
+                thankYouDiv.style.display = 'none';
+            });
+
+            // Rating hover effect
+            const ratingOptions = document.querySelectorAll('.rating-option');
+            ratingOptions.forEach(option => {
+                option.addEventListener('mouseenter', function() {
+                    const ratingValue = this.querySelector('input').value;
+                    highlightRatings(ratingValue);
+                });
+                
+                option.addEventListener('mouseleave', function() {
+                    const checkedOption = document.querySelector('.rating-option input:checked');
+                    if (checkedOption) {
+                        highlightRatings(checkedOption.value);
+                    } else {
+                        resetRatingColors();
+                    }
+                });
+            });
+
+            function highlightRatings(upToValue) {
+                resetRatingColors();
+                ratingOptions.forEach(option => {
+                    if (option.querySelector('input').value <= upToValue) {
+                        const circle = option.querySelector('.rating-circle');
+                        circle.style.background = 'linear-gradient(135deg, var(--light-red), var(--primary-red))';
+                        circle.style.color = 'var(--white)';
+                        circle.style.borderColor = 'var(--dark-red)';
+                    }
+                });
+            }
+
+            function resetRatingColors() {
+                ratingOptions.forEach(option => {
+                    const input = option.querySelector('input');
+                    if (!input.checked) {
+                        const circle = option.querySelector('.rating-circle');
+                        circle.style.background = 'var(--light-gray)';
+                        circle.style.color = 'var(--medium-gray)';
+                        circle.style.borderColor = 'transparent';
+                    }
+                });
+            }
+
+            // Add shake animation for invalid fields
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    20%, 60% { transform: translateX(-5px); }
+                    40%, 80% { transform: translateX(5px); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
+
+
