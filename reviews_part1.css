@@ -169,3 +169,15 @@ REVIEW SECTION STYLES
     position: relative;
     z-index: 2;
 }
+
+.customer-img-bg {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #d10000, #ff6b6b);
+    top: -10px;
+    left: -10px;
+    z-index: 1;
+    animation: pulse 4s infinite ease-in-out;
+}
