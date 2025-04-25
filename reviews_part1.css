@@ -142,3 +142,17 @@ REVIEW SECTION STYLES
     padding: 20px;
 }
 
+
+.review.active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    z-index: 2;
+}
+
+
+
+.customer-img-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+
