@@ -98,3 +98,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="rating">${stars}</div>
                 <span class="review-date">${review.date}</span>
             `;
+               
+            // Add review to the container
+            reviewSquare.appendChild(reviewDiv);
+            
+            // Create navigation dot
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (index === 0) dot.classList.add('active');
+            dot.dataset.index = index;
+            dotsContainer.appendChild(dot);
+            
+            // Add click event to dot
+            dot.addEventListener('click', () => {
+                showReview(index);
+                resetAutoRotation();
+            });
+        });
+    }
+
+    // ========== SHOW REVIEW FUNCTION ==========
+    /**
+     * Displays the review at the specified index
+     * @param {number} index - The index of the review to show
+     */
+    function showReview(index) {
+        const allReviews = document.querySelectorAll('.review');
+        const allDots = document.querySelectorAll('.dot');
+        
+        // Hide all reviews
+        allReviews.forEach(review => {
+            review.classList.remove('active');
+        });
