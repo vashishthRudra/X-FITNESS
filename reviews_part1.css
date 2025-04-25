@@ -181,3 +181,20 @@ REVIEW SECTION STYLES
     z-index: 1;
     animation: pulse 4s infinite ease-in-out;
 }
+
+.review:hover .customer-img {
+    transform: scale(1.08);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.review-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: 400;
+    position: relative;
+    padding: 0 20px;
+    max-height: 220px;
+    overflow-y: auto;
+}
