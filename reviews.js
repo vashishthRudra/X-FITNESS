@@ -130,3 +130,26 @@ document.addEventListener('DOMContentLoaded', function() {
         allReviews.forEach(review => {
             review.classList.remove('active');
         });
+          
+        // Remove active class from all dots
+        allDots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        // Show selected review and activate corresponding dot
+        allReviews[index].classList.add('active');
+        allDots[index].classList.add('active');
+        currentIndex = index;
+    }
+
+    // ========== NEXT REVIEW FUNCTION ==========
+    /**
+     * Advances to the next review in sequence
+     * Wraps around to first review when reaching the end
+     */
+    function nextReview() {
+        let newIndex = currentIndex + 1;
+        if (newIndex >= reviews.length) newIndex = 0;
+        showReview(newIndex);
+    }
+
