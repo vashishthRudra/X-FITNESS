@@ -50,3 +50,11 @@
     margin-top: 15px;
     font-weight: bold;
 } 
+#bmiCategory,
+#healthTip {
+    margin-top: 5px;
+} 
+
+#healthTip {
+    font-style: italic;
+} 
