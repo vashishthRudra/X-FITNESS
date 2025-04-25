@@ -19,3 +19,27 @@ document.addEventListener('DOMContentLoaded', function() {
             photo: "https://randomuser.me/api/portraits/men/32.jpg",
             date: "March 15, 2023"
         },
+         {
+            text: "The facilities at X-FITNESS are top-notch. Clean, modern equipment and plenty of space. I especially love the group classes - the energy is electric! The yoga sessions have improved my flexibility tremendously, and the HIIT classes push me to my limits in the best way possible. The trainers modify exercises for all fitness levels, making everyone feel included.",
+            author: "Sarah Williams",
+            role: "Fitness Enthusiast",
+            rating: 5,
+            photo: "https://randomuser.me/api/portraits/women/44.jpg",
+            date: "February 28, 2023"
+        },
+        {
+            text: "As a busy professional, I appreciate the flexible hours. The 24/7 access means I can workout whenever my schedule allows. The staff is always friendly and helpful. The locker rooms are spotless, and I love that they provide towels and toiletries. It's these little details that make all the difference! The app makes it easy to track my workouts and progress too.",
+            author: "David Chen",
+            role: "Business Executive",
+            rating: 4,
+            photo: "https://randomuser.me/api/portraits/men/22.jpg",
+            date: "April 2, 2023"
+        },
+        {
+            text: "I've tried many gyms before, but X-FITNESS stands out. The personal training program transformed my body in just 3 months. Worth every penny! My trainer understood my goals and customized workouts that were challenging yet achievable. The nutrition advice was also spot on - I've never felt better! The recovery area with massage chairs is a game-changer after tough workouts.",
+            author: "Emily Rodriguez",
+            role: "Former Athlete",
+            rating: 5,
+            photo: "https://randomuser.me/api/portraits/women/63.jpg",
+            date: "January 10, 2023"
+        },
