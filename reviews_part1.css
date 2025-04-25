@@ -35,3 +35,11 @@ body {
     100% { transform: translateY(0px); }
 }
 
+/* ========== LAYOUT STYLES ========== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
