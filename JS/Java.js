@@ -59,6 +59,39 @@ joinForm.addEventListener('submit', (e) => {
 
 // Navbar Background Change on Scroll
 
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.style.background = 'rgba(0, 0, 0, 0.9)';
+    } else {
+        nav.style.background = 'rgba(0, 0, 0, 0.8)';
+    }
+});
+
+
 // Animate Services on Scroll
+
+
+const observerOptions = {
+    threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.service-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(50px)';
+    card.style.transition = 'all 0.5s ease-out';
+    observer.observe(card);
+});
+
+
 
 
