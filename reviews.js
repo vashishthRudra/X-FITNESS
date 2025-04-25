@@ -43,3 +43,27 @@ document.addEventListener('DOMContentLoaded', function() {
             photo: "https://randomuser.me/api/portraits/women/63.jpg",
             date: "January 10, 2023"
         },
+          {
+            text: "The nutrition guidance combined with the workout plans helped me lose 25 pounds and keep it off. This isn't just a gym, it's a lifestyle changer! The community challenges are so fun and keep me motivated. I've made friends here who push me to be my best self. The smoothie bar is an added bonus - delicious and healthy post-workout options! The child care service makes it possible for me to workout regularly.",
+            author: "James Wilson",
+            role: "Weight Loss Success",
+            rating: 5,
+            photo: "https://randomuser.me/api/portraits/men/75.jpg",
+            date: "December 5, 2022"
+        },
+        {
+            text: "I was nervous about joining a gym, but the team at X-FITNESS made me feel welcome from day one. The beginner programs are perfect for someone just starting out. The staff took time to show me how to use all the equipment properly, and I never feel judged. After 6 months, I'm stronger and more confident than I've ever been! The monthly progress assessments keep me accountable and motivated to keep improving.",
+            author: "Jennifer Lee",
+            role: "New Member",
+            rating: 4,
+            photo: "https://randomuser.me/api/portraits/women/28.jpg",
+            date: "May 20, 2023"
+        }
+    ];
+
+    // DOM elements
+    const reviewSquare = document.querySelector('.review-square');
+    const dotsContainer = document.getElementById('dotsContainer');
+    let currentIndex = 0;
+    let intervalId;
+    let isAutoRotating = true;
