@@ -67,3 +67,34 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
     let intervalId;
     let isAutoRotating = true;
+    
+    // ========== INITIALIZE REVIEWS ==========
+    /**
+     * Creates review elements and navigation dots
+     * based on the reviews array
+     */
+    function initReviews() {
+        reviews.forEach((review, index) => {
+            // Create review div element
+            const reviewDiv = document.createElement('div');
+            reviewDiv.className = 'review';
+            if (index === 0) reviewDiv.classList.add('active');
+            
+            // Generate star rating HTML
+            let stars = '';
+            for (let i = 0; i < 5; i++) {
+                stars += i < review.rating ? '★' : '☆';
+            }
+            
+            // Create review HTML structure
+            reviewDiv.innerHTML = `
+                <div class="customer-img-container">
+                    <div class="customer-img-bg"></div>
+                    <img src="${review.photo}" alt="${review.author}" class="customer-img">
+                </div>
+                <p class="review-text">${review.text}</p>
+                <p class="review-author">${review.author}</p>
+                <p class="review-role">${review.role}</p>
+                <div class="rating">${stars}</div>
+                <span class="review-date">${review.date}</span>
+            `;
