@@ -152,4 +152,25 @@ document.addEventListener('DOMContentLoaded', function() {
         if (newIndex >= reviews.length) newIndex = 0;
         showReview(newIndex);
     }
+    
+    // ========== AUTO ROTATION CONTROL ==========
+    /**
+     * Resets the auto-rotation timer
+     * Useful after manual navigation
+     */
+    function resetAutoRotation() {
+        stopAutoRotation();
+        startAutoRotation();
+    }
+
+    /**
+     * Starts automatic rotation of reviews
+     * Uses a 1.5-second interval for faster transitions
+     */
+    function startAutoRotation() {
+        if (!isAutoRotating) return;
+        stopAutoRotation(); // Clear any existing interval
+        intervalId = setInterval(nextReview, 1500); // 1.5-second interval for faster shuffling
+    }
+
 
