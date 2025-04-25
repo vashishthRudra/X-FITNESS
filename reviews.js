@@ -172,5 +172,40 @@ document.addEventListener('DOMContentLoaded', function() {
         stopAutoRotation(); // Clear any existing interval
         intervalId = setInterval(nextReview, 1500); // 1.5-second interval for faster shuffling
     }
+    
+    /**
+     * Stops the automatic rotation of reviews
+     */
+    function stopAutoRotation() {
+        if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+    }
+
+    // ========== INITIALIZE PAGE ==========
+    /**
+     * Initializes all page functionality
+     */
+    function init() {
+        initReviews();
+        startAutoRotation();
+
+        // Pause auto rotation when mouse enters review container
+        reviewSquare.addEventListener('mouseenter', () => {
+            isAutoRotating = false;
+            stopAutoRotation();
+        });
+        
+        // Resume auto rotation when mouse leaves
+        reviewSquare.addEventListener('mouseleave', () => {
+            isAutoRotating = true;
+            startAutoRotation();
+        });
+    }
+
+    // Start everything when DOM is loaded
+    init();
+});
 
 
