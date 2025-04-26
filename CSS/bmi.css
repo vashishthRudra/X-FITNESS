@@ -12,8 +12,16 @@ body {
     padding: 20px;
     border-radius: 10px
     max-width: 400px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
     position: relative;
 }
+
+.bmi-modal-content:hover {
+    transform: scale(1.02);
+}
+
   #bmiModal {
     position: fixed;
     z-index: 1000;
@@ -38,6 +46,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
+    transition: color 0.3s ease;
 } 
 .bmi-input-group {
     margin-bottom: 10px;
