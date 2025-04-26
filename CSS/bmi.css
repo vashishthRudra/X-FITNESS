@@ -48,6 +48,9 @@ body {
     cursor: pointer;
     transition: color 0.3s ease;
 } 
+.bmi-close:hover {
+    color: #f07365;
+}
 .bmi-input-group {
     margin-bottom: 10px;
     display: flex;
@@ -58,7 +61,17 @@ body {
 .bmi-input-group select {
     padding: 9px;
     box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
 }
+
+.bmi-input-group input:focus,
+.bmi-input-group select:focus {
+    border-color: #db8a34;
+    outline: none;
+} 
 .bmi-input-group input {
     width: 60%;
 }
