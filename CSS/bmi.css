@@ -81,14 +81,26 @@ body {
  .bmi-button {
     padding: 10px 20px;
     margin-right: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px; 
+    background-color: #295a8e;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+.bmi-button:hover {
+    background-color: #2980b9;
 }
  #bmiResult {
     margin-top: 15px;
     font-weight: bold;
+     font-size: 18px;
 } 
 #bmiCategory,
 #healthTip {
     margin-top: 5px;
+    font-size: 16px;
 } 
 
 #healthTip {
