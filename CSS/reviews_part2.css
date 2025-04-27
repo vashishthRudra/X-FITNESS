@@ -7,3 +7,15 @@
     background: linear-gradient(to bottom, #d10000, #ff6b6b);
     border-radius: 10px;
 }
+
+
+.review-text::before,
+.review-text::after {
+    content: '"';
+    font-size: 3rem;
+    color: #d10000;
+    opacity: 0.2;
+    position: absolute;
+    font-weight: bold;
+    font-family: Georgia, serif;
+}
