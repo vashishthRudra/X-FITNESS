@@ -110,3 +110,8 @@
     transition: all 0.4s ease;
     position: relative;
 }
+
+.dot:hover {
+    transform: scale(1.3);
+    background-color: #ff6b6b;
+}
