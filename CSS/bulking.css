@@ -41,5 +41,16 @@ h2 {
     margin-bottom: 20px;
 }
 
+h3 {
+    color: #e74c3c;
+    margin-top: px;
+}
+
+p, ul {
+    color: #555;
+    line-height: 1.6;
+}
+
+
 
 
