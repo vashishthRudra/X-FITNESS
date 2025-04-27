@@ -1,3 +1,10 @@
+body {
+    background-color: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .bmi-modal-content {
     background-color: white;
     text-align: center;
@@ -5,8 +12,16 @@
     padding: 20px;
     border-radius: 10px
     max-width: 400px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
     position: relative;
 }
+
+.bmi-modal-content:hover {
+    transform: scale(1.02);
+}
+
   #bmiModal {
     position: fixed;
     z-index: 1000;
@@ -15,6 +30,13 @@
     width: 100%;
     height: 100%;
     overflow: auto;
+    /* Soft gradient background overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 
 }
  .bmi-close {
@@ -24,7 +46,11 @@
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
+    transition: color 0.3s ease;
 } 
+.bmi-close:hover {
+    color: #f07365;
+}
 .bmi-input-group {
     margin-bottom: 10px;
     display: flex;
@@ -35,7 +61,17 @@
 .bmi-input-group select {
     padding: 9px;
     box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
 }
+
+.bmi-input-group input:focus,
+.bmi-input-group select:focus {
+    border-color: #db8a34;
+    outline: none;
+} 
 .bmi-input-group input {
     width: 60%;
 }
@@ -45,8 +81,28 @@
  .bmi-button {
     padding: 10px 20px;
     margin-right: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px; 
+    background-color: #295a8e;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+.bmi-button:hover {
+    background-color: #2980b9;
 }
  #bmiResult {
     margin-top: 15px;
     font-weight: bold;
+     font-size: 18px;
+} 
+#bmiCategory,
+#healthTip {
+    margin-top: 5px;
+    font-size: 16px;
+} 
+
+#healthTip {
+    font-style: italic;
 } 
