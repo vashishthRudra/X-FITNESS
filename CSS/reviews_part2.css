@@ -364,3 +364,31 @@
         font-size: 1.8rem;
     }
 }
+@media (max-width: 480px) {
+    .review-square {
+        min-height: 600px;
+        padding: 30px 20px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .review-text {
+        font-size: 1rem;
+    }
+    .review-author {
+        font-size: 1.2rem;
+    }
+    .rating {
+        font-size: 1.4rem;
+    }
+    .stat-box {
+        min-width: 140px;
+        padding: 20px 15px;
+    }
+    .stat-number {
+        font-size: 2rem;
+    }
+    .stat-label {
+        font-size: 0.9rem;
+    }
+}
