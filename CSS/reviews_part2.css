@@ -235,3 +235,15 @@
     border-radius: 3px;
     opacity: 0.8;
 }
+
+/* 
+              TESTIMONIAL SOURCE 
+                                   */
+
+.testimonial-source {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+}
