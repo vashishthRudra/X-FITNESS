@@ -222,3 +222,16 @@
     user-select: none;
 }
 
+
+/* 
+            SECTION DIVIDER 
+                             */
+
+.section-divider {
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(to right, #d10000, #ff6b6b);
+    margin: 40px auto;
+    border-radius: 3px;
+    opacity: 0.8;
+}
