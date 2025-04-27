@@ -19,3 +19,9 @@
     font-weight: bold;
     font-family: Georgia, serif;
 }
+
+
+.review-text::before {
+    top: 25px;
+    left: 0;
+}
