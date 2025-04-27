@@ -25,3 +25,9 @@
     top: -25px;
     left: 0;
 }
+
+
+.review-text::after {
+    bottom: -40px;
+    right: 0;
+}
