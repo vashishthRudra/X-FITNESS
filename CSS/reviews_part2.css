@@ -247,3 +247,72 @@
     color: #888;
     font-style: italic;
 }
+
+/* 
+               part 4 
+                        */
+
+
+/* 
+               CALL TO ACTION
+                                  */
+
+.cta-section {
+    text-align: center;
+    margin: 80px 0;
+    padding: 60px 0;
+    background: linear-gradient(135deg, rgba(209, 0, 0, 0.03) 0%, rgba(255, 255, 255, 1) 100%);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #d10000, #ff6b6b);
+}
+
+.cta-title {
+    font-size: 2.2rem;
+    color: #d10000;
+    margin-bottom: 20px;
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.cta-button {
+    background: linear-gradient(to right, #d10000, #ff6b6b);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 20px rgba(209, 0, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(209, 0, 0, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
