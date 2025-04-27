@@ -316,3 +316,51 @@
 .cta-button:active {
     transform: translateY(0);
 }
+/*  
+               part 5  
+                          */
+
+
+/* 
+              MEDIA QUERIES 
+                              */
+
+@media (max-width: 768px) {
+    .review-square {
+        width: 90%;
+        min-height: 580px;
+        padding: 40px 25px;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    .review-text {
+        font-size: 1.1rem;
+        max-height: 250px;
+        padding: 0 10px;
+    }
+    .customer-img {
+        width: 100px;
+        height: 100px;
+    }
+    .customer-img-bg {
+        width: 120px;
+        height: 120px;
+    }
+    .social-proof {
+        gap: 20px;
+    }
+    .stat-box {
+        padding: 25px 30px;
+        min-width: 160px;
+    }
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    .cta-title {
+        font-size: 1.8rem;
+    }
+}
