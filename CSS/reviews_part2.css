@@ -1,1 +1,3 @@
-
+.review-text::-webkit-scrollbar {
+    width: 5px;
+}
