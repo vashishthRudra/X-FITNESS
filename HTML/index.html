@@ -1,110 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X-Fitness</title>
+    <link rel="stylesheet" href="testing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
-<body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
-
-<header style="background-color: #333; color: white; padding: 10px 20px;">
-    <h1 style="margin: 0;">X-Fitness</h1>
+<body>
     <nav>
-        <a href="#home" style="color: white; margin-right: 15px; text-decoration: none;">Home</a>
-        <a href="#services" style="color: white; margin-right: 15px; text-decoration: none;">Services</a>
-        <a href="#classes" style="color: white; margin-right: 15px; text-decoration: none;">Classes</a>
-        <a href="#contact" style="color: white; text-decoration: none;">Contact</a>
-        <a href="bmi.html"><button id="bmiBtn" style="background-color: #555; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;" href="dietplans.html">BMI</button></a>
-
-          
-
-        <li><button class="join-btn">Join Now</button></li>
-
+        <div class="logo">X-Fitness</div>
+        <div class="nav-toggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="bmifinal.html"><button id="bmiBtn" class="join-btn">BMI</button></a></li>
+            <li><a href="#join"><button class="join-btn">Join Now</button></li></a>
+        </ul>
     </nav>
-</header>
 
-<section id="home" style="padding: 40px 20px; text-align: center; background-color: #f4f4f4;">
-    <h2>Transform Your Body</h2>
-    <p>Start your fitness journey today</p>
-    <a href="#join" style="display: inline-block; padding: 10px 20px; background-color: #333; color: white; text-decoration: none; border-radius: 4px;">Get Started</a>
-</section>
+    <section id="home">
+        <div class="video-container">
+            <video autoplay muted loop id="bgVideo">
+                <source src="WhatsApp Video 2025-04-28 at 01.18.17.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1>Transform Your Body</h1>
+            <p>Start your fitness journey today</p>
+            <a href="dietplan.html" class="join-btn">Get Started</a>
+        </div>
+    </section>
 
-<section id="services" style="padding: 20px;">
-    <h2>Our Services</h2>
-    <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 10px;"><strong>Personal Training:</strong> Customized workout plans with expert trainers</li>
-        <li style="margin-bottom: 10px;"><strong>Cardio Zone:</strong> State-of-the-art cardio equipment</li>
-        <li><strong>Group Classes:</strong> Energetic group workout sessions</li>
-    </ul>
-</section>
+    <section id="services" data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-out">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-dumbbell"></i>
+                <h3>Personal Training</h3>
+                <p>Customized workout plans with expert trainers</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-heart"></i>
+                <h3>Cardio Zone</h3>
+                <p>State-of-the-art cardio equipment</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-users"></i>
+                <h3>Group Classes</h3>
+                <p>Energetic group workout sessions</p>
+            </div>
+        </div>
+    </section>
 
-<section id="classes" style="padding: 20px; background-color: #f4f4f4;">
-    <h2>Our Classes</h2>
-    <ul style="list-style: none; padding: 0;">
-         <a href="yoga.html"> <li style="margin-bottom: 10px;"><strong>Yoga:</strong> Mon, Wed, Fri - 9:00 AM</li></a>
-        <li style="margin-bottom: 10px;"><strong>CrossFit:</strong> Tue, Thu - 6:00 PM</li>
-        <a href="spinning.html"> <li><strong>Spinning:</strong> Daily - 7:00 AM</li></a>
-    </ul>
-</section>
+    <section id="classes" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in">
+        <h2>Our Classes</h2>
+        <div class="classes-grid">
+            <div class="class-card">
+                <a href="yoga.html">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a" alt="Yoga">
+                    <h3>Yoga</h3>
+                    <p>Mon, Wed, Fri - 9:00 AM</p>
+                </a>
+            </div>
+            <div class="class-card">
+                <a href="crossfit.html">
+                    <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5" alt="CrossFit">
+                    <h3>CrossFit</h3>
+                    <p>Tue, Thu - 6:00 PM</p>
+                </a>
+            </div>
+            <div class="class-card">
+                <a href="spinning.html">
+                    <img src="https://images.unsplash.com/photo-1470468969717-61d5d54fd036" alt="Spinning">
+                    <h3>Spinning</h3>
+                    <p>Daily - 7:00 AM</p>
+                </a>
+            </div>
+            <div class="class-card">
+                <a href="zumba.html">
+                    <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1" alt="Zumba">
+                    <h3>Zumba</h3>
+                    <p>Mon, Wed, Fri - 6:00 PM</p>
+                </a>
+            </div>
+            <div class="class-card">
+                <a href="Calisthenics.html">
+                    <img src="calesthinics.webp" alt="Calisthenics">
+                    <h3>Calisthenics</h3>
+                    <p>Tue, Thu - 7:00 AM</p>
+                </a>
+            </div>
+            <div class="class-card">
+                <a href="Martial Arts.html">
+                    <img src="martialarts.jpeg" alt="Martial Arts">
+                    <h3>Martial Arts</h3>
+                    <p>Sat, Sun - 10:00 AM</p>
+                </a>
+            </div>
+        </div>
+    </section>
 
-<section id="contact" style="padding: 20px;">
-    <h2>Contact Us</h2>
-    <form id="contact-form" style="max-width: 400px;">
-        <p>
-            <label for="name">Name:</label><br />
-            <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
-        </p>
-        <p>
-            <label for="email">Email:</label><br />
-            <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
-        </p>
-        <p>
-            <label for="message">Message:</label><br />
-            <textarea id="message" name="message" required style="width: 100%; padding: 8px; box-sizing: border-box;" rows="4"></textarea>
-        </p>
-        <p>
-            <button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 4px;">Send Message</button>
-        </p>
-    </form>
-</section>
+ 
+    
+    
+    <section id="join" style="padding: 20px; background-color: #f4f4f4;">
+        <h2>Join X-Fitness</h2>
+        <form id="join-form" style="max-width: 400px;">
+            <p>
+                <label for="fullname">Full Name:</label><br />
+                <input type="text" id="fullname" name="fullname" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
+            </p>
+            <p>
+                <label for="join-email">Email:</label><br />
+                <input type="email" id="join-email" name="email" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
+            </p>
+            <p>
+                <label for="phone">Phone:</label><br />
+                <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
+            </p>
+            <p>
+                <label for="membership">Membership Plan:</label><br />
+                <select id="membership" name="membership" required style="width: 100%; padding: 8px; box-sizing: border-box;">
+                    <option value="">Select Membership Plan</option>
+                    <option value="basic">Basic - 1500/month</option>
+                    <option value="premium">Premium - 2500/month</option>
+                    <option value="elite">Elite - 4000/month</option>
+                </select>
+            </p>
+            <div class="button-row">
+                <button type="submit" class="join-btn">Submit</button>
+                <a href="feedbackkk.html"><button type="button" id="feedback-review-btn" class="join-btn">Feedback </button></a>
+            </div>
+        </form>
+    </section>
 
-<section id="join" style="padding: 20px; background-color: #f4f4f4;">
-    <h2>Join X-Fitness</h2>
-    <form id="join-form" style="max-width: 400px;">
-        <p>
-            <label for="fullname">Full Name:</label><br />
-            <input type="text" id="fullname" name="fullname" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
-        </p>
-        <p>
-            <label for="join-email">Email:</label><br />
-            <input type="email" id="join-email" name="email" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
-        </p>
-        <p>
-            <label for="phone">Phone:</label><br />
-            <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 8px; box-sizing: border-box;" />
-        </p>
-        <p>
-            <label for="membership">Membership Plan:</label><br />
-            <select id="membership" name="membership" required style="width: 100%; padding: 8px; box-sizing: border-box;">
-                <option value="">Select Membership Plan</option>
-                <option value="basic">Basic - 1500/month</option>
-                <option value="premium">Premium - 2500/month</option>
-                <option value="elite">Elite - 4000/month</option>
-            </select>
-        </p>
-        <p>
-            <button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 4px;">Submit</button>
-        </p>
-        <p>
-            <a href="feedbackkk.html"><button type="button" id="feedback-review-btn" style="padding: 10px 20px; background-color: #555; color: white; border: none; border-radius: 4px; cursor: pointer;">Feedback Review</button></a>
-        </p>
-    </form>
-</section>
+    <section id="contact" data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-out">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <form id="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 Fitness Street, Gym City</p>
+                </div>
+                <div>
+                    <i class="fas fa-phone"></i>
+                    <p>234 567 8900</p>
+                </div>
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <p>info@xfitness.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer style="background-color: #333; color: white; text-align: center; padding: 10px 20px;">
-    <p>&copy; 2025 X-Fitness.</p>
-</footer>
+    <footer>
+        <p>&copy; 2025 X-Fitness.</p>
+    </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="testing.js"></script>
+   
 </body>
 </html>
