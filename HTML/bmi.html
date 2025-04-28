@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Calculator</title>
-    <link rel="stylesheet" href="bmi.css">
-</head>
-<body>
-<div id="bmiModal">
-    <div class="bmi-modal-content">
-      <span id="bmiClose" class="bmi-close">&times;</span>
-      <h2>BMI Calculator</h2>
-      <div class="bmi-input-group">
-        <input type="number" id="weight" placeholder="Weight" required />
-        <select id="weightUnit">
-          <option value="kg" selected>kg</option>
-          <option value="lbs">lbs</option>
-        </select>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BMI Calculator</title>
+        <link rel="stylesheet" href="/CSS/bmi.css">
+       
+    </head>
+    <body>
+        <div id="bmiModal">
+            <div class="bmi-modal-content">
+              <a href="testing.html"><span id="bmiClose" class="bmi-close">&times;</span></a> 
+          <h2>BMI Calculator</h2>
+          <div class="bmi-input-group">
+            <input type="number" id="weight" placeholder="Weight" required />
+            <select id="weightUnit">
+              <option value="kg" selected>kg</option>
+              <option value="lbs">lbs</option>
+            </select>
+          </div>
+          <div class="bmi-input-group">
+            <input type="number" id="height" placeholder="Height" required />
+            <select id="heightUnit">
+              <option value="cm" selected>cm</option>
+              <option value="in">inches</option>
+            </select>
+          </div>
+          <button onclick="calculateBMI()" class="bmi-button">Calculate BMI</button>
+          <button onclick="resetFields()" class="bmi-button">Reset</button>
+          <div id="bmiResult"></div>
+          <div id="bmiCategory"></div>
+          <div id="healthTip"></div>
+        </div>
       </div>
-        <div class="bmi-input-group">
-        <input type="number" id="height" placeholder="Height" required />
-        <select id="heightUnit">
-          <option value="cm" selected>cm</option>
-          <option value="in">inches</option>
-        </select>
-      <button onclick="calculateBMI()" class="bmi-button">Calculate BMI</button>
-      <button onclick="resetFields()" class="bmi-button">Reset</button>
-      <div id="bmiResult"></div>
-      <div id="bmiCategory"></div>
-      <div id="healthTip"></div>
-    </div>
-      </div>
-    <script src="bmi.js"></script>
-</body></html>
+      <script src="/JS/bmi.js"></script>
+      
+    </body>
+    </html>
